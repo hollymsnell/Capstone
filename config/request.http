@@ -1,0 +1,41 @@
+
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2NTE4ODgxMjB9._Iw0qaUZCjIUjAstWzThQ_Haz2jInffmKZBe5n7wCtw
+###exercise Index
+GET http://localhost:3000/exercises/
+
+###exercise show
+GET http://localhost:3000/exercises/4
+
+###exercise create
+POST http://localhost:3000/exercises/
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "name": "push ups",
+  "instructions": "",
+  "frequency": "2 x 10,3x/wk.",
+  "image": ""
+}
+
+
+### Users create (signup)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Steve",
+  "email": "steve@example.com",
+  "password": "password",
+  "password_confirmation": "password",
+  "admin": true
+}
+
+### Sessions create (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "steve@example.com",
+  "password": "password"
+}
