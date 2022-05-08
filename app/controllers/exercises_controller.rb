@@ -1,7 +1,7 @@
 class ExercisesController < ApplicationController
   before_action :authenticate_admin, except: [:index, :show]
   def index
-    all_exercises = Exercise.all
+    all_exercises = Exercise.all.order(:name)
     render json: all_exercises
   end
 
@@ -27,13 +27,13 @@ class ExercisesController < ApplicationController
 
   def update
     exercise_id = params["id"]
-    exercise = Exercise.find(product_id)
+    exercise = Exercise.find(exercise_id)
     exercise.name = params["name"] || exercise.name
     exercise.instructions = params["instructions"] || exercise.instructions
     exercise.frequency = params["frequency"] || exercise.frequency
     exercise.image = params["image"] || exercise.image
 
-    if product.save
+    if exercise.save
       render json: exercise
     else
       render json: {error_messages: exercise.errors.full_messages},
