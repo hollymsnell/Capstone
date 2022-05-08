@@ -1,5 +1,5 @@
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2NTE4ODgxMjB9._Iw0qaUZCjIUjAstWzThQ_Haz2jInffmKZBe5n7wCtw
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2NTIxMDc2MTl9.ezcfM0VkJqMzSbPR3eb0fJh9mmozb38MVawxNmFmMQY
 ###exercise Index
 GET http://localhost:3000/exercises/
 
@@ -24,8 +24,8 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "Steve",
-  "email": "steve@example.com",
+  "name": "Billy",
+  "email": "billy@example.com",
   "password": "password",
   "password_confirmation": "password",
   "admin": true
