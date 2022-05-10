@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def index
+    all_users = User.all.order(:name)
+    render json: all_users
+  end
   def create
     user = User.new(
       name: params[:name],

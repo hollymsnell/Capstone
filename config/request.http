@@ -23,6 +23,9 @@ PATCH http://localhost:3000/exercises/
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
+###user Index
+GET http://localhost:3000/users/
+
 ### Users create (signup)
 POST http://localhost:3000/users
 Content-Type: application/json
