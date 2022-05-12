@@ -1,5 +1,5 @@
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2NTIxMDc2MTl9.ezcfM0VkJqMzSbPR3eb0fJh9mmozb38MVawxNmFmMQY
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2NTIzOTgyODV9.geNcl3MZVN8ynKRzsGvziEQnYtBTSPd1Oe-Sx5_FvFM
 ###exercise Index
 GET http://localhost:3000/exercises/
 
@@ -46,3 +46,32 @@ Content-Type: application/json
   "email": "steve@example.com",
   "password": "password"
 }
+
+###program index
+GET http://localhost:3000/programs
+Authorization: Bearer {{jwt}}
+
+###program create
+POST http://localhost:3000/programs/
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "user_id": 5,
+  "user_rating": "easy",
+  "title": "Shoulder"
+}
+
+###exercise_program create
+POST http://localhost:3000/exercise_programs/
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "program_id": 4,
+  "exercise_id": 2
+}
+
+###exercise_program index
+GET http://localhost:3000/exercise_programs
+Authorization: Bearer {{jwt}}

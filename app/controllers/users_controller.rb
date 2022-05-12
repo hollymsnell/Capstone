@@ -3,6 +3,12 @@ class UsersController < ApplicationController
     all_users = User.all.order(:name)
     render json: all_users
   end
+
+  def show
+    user = User.find_by(id: params[:id])
+    render json: user
+  end
+
   def create
     user = User.new(
       name: params[:name],

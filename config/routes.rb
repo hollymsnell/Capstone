@@ -19,7 +19,7 @@ post "/sessions" => "sessions#create"
 ###program routes
 get "/programs" => "programs#index"
 post "/programs" => "programs#create"
-get "/programs/:id" => "programs#show"
+get "/programs/:user_id" => "programs#show"
 patch "/programs/:id" => "programs#update"
 delete "/programs/:id" => "programs#destroy"
 

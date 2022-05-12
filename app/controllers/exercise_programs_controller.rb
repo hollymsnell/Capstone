@@ -1,16 +1,17 @@
 class ExerciseProgramsController < ApplicationController
 
   def index
-    exercise_programs = current_user.exercise_programs.where(status: "added")
-    render json: exercise_programs.as_json
+    exercise_program = ExerciseProgram.all
+    # exercise_programs = current_user.exercise_programs.where(status: "added")
+    render json: exercise_program
   end
 
   def create
     exercise_program = ExerciseProgram.new(
-      user_id: current_user.id,
+      # user_id: current_user.id,
       exercise_id: params[:exercise_id],
-      status: "added",
-      program_id: nil
+      # status: "added",
+      program_id: params[:program_id]
     )
     if exercise_program.save
       render json: exercise_program
@@ -21,7 +22,7 @@ class ExerciseProgramsController < ApplicationController
 
   def destroy
       exercise_program = ExerciseProgram.find(params[:id])
-      exercise_program.status = "removed"
+      # exercise_program.status = "removed"
     if exercise_program.save
       render json: {status: "Exercise Program removed"}
     else
