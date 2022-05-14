@@ -1,9 +1,9 @@
 class ProgramsController < ApplicationController
-  before_action :authenticate_user, except: [:index, :show]
+  # before_action :authenticate_user, except: [:index, :show]
 
   def index
     pp current_user
-    programs = Program.where(user_id: current_user.id)
+    programs = Program.where(user_id: current_user.id).order(:created_at)
     # programs = Program.all
     render json: programs
   end
@@ -24,6 +24,20 @@ class ProgramsController < ApplicationController
     if program.save
       # exercise_programs.update_all(status: "completed", program_id: program.id)
       render json: program.as_json
+    else
+      render json: {error_messages: program.errors.full_messages},
+      status: 422
+    end
+  end
+
+  def update
+    id = params["id"]
+    program = Program.find(id)
+    program.user_rating = params["user_rating"] || program.user_rating
+    program.title = params["title"] || program.title
+    
+    if program.save
+      render json: program
     else
       render json: {error_messages: program.errors.full_messages},
       status: 422

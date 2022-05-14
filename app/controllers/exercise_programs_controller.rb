@@ -7,17 +7,19 @@ class ExerciseProgramsController < ApplicationController
   end
 
   def create
-    exercise_program = ExerciseProgram.new(
-      # user_id: current_user.id,
-      exercise_id: params[:exercise_id],
-      # status: "added",
-      program_id: params[:program_id]
-    )
-    if exercise_program.save
-      render json: exercise_program
-    else
-      render json: {error_message: exercise_program.errors.full_messages}, status: 422
-    end 
+    index = 0
+    exerciseProgram = []
+    while index < params[:exercises].length
+      exercise_program = ExerciseProgram.new(
+        exercise_id: params[:exercises][index][:id],
+        program_id: params[:program_id]
+      )
+      if exercise_program.save
+        exerciseProgram << exercise_program
+      end
+      index = index + 1
+    end
+    render json: exerciseProgram
   end
 
   def destroy
@@ -30,3 +32,5 @@ class ExerciseProgramsController < ApplicationController
     end
   end
 end
+
+
