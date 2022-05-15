@@ -43,4 +43,11 @@ class ProgramsController < ApplicationController
       status: 422
     end
   end
+
+  def destroy
+    program_id = params["id"]
+    program = Program.find_by(id: program_id)
+    program.destroy
+    render json: {message: "program destroyed"}
+  end
 end

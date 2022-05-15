@@ -1,5 +1,5 @@
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2NTIzOTgyODV9.geNcl3MZVN8ynKRzsGvziEQnYtBTSPd1Oe-Sx5_FvFM
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2NTI3MTI5OTd9.v8nbZ9HWd2RTQzA_V2vOoTZSJU0X_9Ldwm8jCdXDY9I
 ###exercise Index
 GET http://localhost:3000/exercises/
 
@@ -12,8 +12,8 @@ Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "name": "push ups",
-  "instructions": "",
+  "name": "Test",
+  "instructions": "test",
   "frequency": "2 x 10,3x/wk.",
   "image": ""
 }
