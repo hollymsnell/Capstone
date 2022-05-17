@@ -75,3 +75,7 @@ Content-Type: application/json
 ###exercise_program index
 GET http://localhost:3000/exercise_programs
 Authorization: Bearer {{jwt}}
+
+###twilio create
+POST http://localhost:3000/textremind
+

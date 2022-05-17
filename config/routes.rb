@@ -29,4 +29,7 @@ post "/exercise_programs" => "exercise_programs#create"
 get "/exercise_programs/:id" => "exercise_programs#show"
 patch "/exercise_programs/:id" => "exercise_programs#update"
 delete "/exercise_programs/:id" => "exercise_programs#destroy"
+
+###twilio route
+post "/textremind" => "twilio#create"
 end
