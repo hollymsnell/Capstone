@@ -1,7 +1,7 @@
 User.create!([
-  {name: "Holly", email: "test@test.com", password: "password", admin: true},
-  {name: "Kayla", email: "test1@test.com", password: "password", admin: false},
-  {name: "Joe", email: "test2@test.com", password: "password", admin: false},
+  {name: "Holly Snell", email: "test@test.com", password: "password", admin: true, phone:"7194825459", age: 31, profile_pic: "", injury_diagnosis: "low back pain"},
+  {name: "Kayla Sampson", email: "test1@test.com", password: "password", admin: false, phone:"7194825459", age: 31, profile_pic: "", injury_diagnosis: "knee pain"},
+  {name: "Joe Dirt", email: "test2@test.com", password: "password", admin: false, phone:"7194825459", age: 55, profile_pic: "", injury_diagnosis: "hip pain"},
 ])
 
 Exercise.create!([
