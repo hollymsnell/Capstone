@@ -31,12 +31,19 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "Billy",
-  "email": "billy@example.com",
+  "name": "Winter Sun",
+  "email": "wintersun@example.com",
   "password": "password",
   "password_confirmation": "password",
-  "admin": true
+  "admin": true,
+  "phone": "",
+  "age": 32,
+  "profile_pic": "",
+  "injury_diagnosis": "low back pain"
 }
+
+### Users Show
+GET http://localhost:3000/users/8
 
 ### Sessions create (login)
 POST http://localhost:3000/sessions

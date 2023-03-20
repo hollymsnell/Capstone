@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # before_action :authenticate_admin, except: [] 
   def index
     all_users = User.all.order(:name)
     render json: all_users
