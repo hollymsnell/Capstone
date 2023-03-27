@@ -1,5 +1,5 @@
 
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2NTI3MTI5OTd9.v8nbZ9HWd2RTQzA_V2vOoTZSJU0X_9Ldwm8jCdXDY9I
+@jwt = "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2ODAwMjYwNTh9.O4UTOhjAhfT-0r4tuNJ_hnQzPs8AV2dRLJPyQrGwrSA"
 ###exercise Index
 GET http://localhost:3000/exercises/
 
@@ -44,6 +44,24 @@ Content-Type: application/json
 
 ### Users Show
 GET http://localhost:3000/users/8
+
+### Users Update
+PATCH http://localhost:3000/users/
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "user_id": 4,
+  "name": "Annie Warbucks",
+  "email": "test@example.com",
+  "password": "password",
+  "password_confirmation": "password",
+  "admin": false,
+  "phone": "7194825459",
+  "age": 25,
+  "profile_pic": "https://i.ytimg.com/vi/Pw7eXRlxPsA/maxresdefault.jpg",
+  "injury_diagnosis": "pain everywhere"
+}
 
 ### Sessions create (login)
 POST http://localhost:3000/sessions
