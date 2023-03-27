@@ -26,6 +26,31 @@ class UsersController < ApplicationController
       render json: { errors: user.errors.full_messages }, status: :bad_request
     end
   end
+  def update
+    user_id = params["id"]
+    user = User.find(user_id)
+    user.name = params["name"] || user.name
+    user.email = params["email"] || user.email
+    user.password = params["password"] || user.password
+    user.phone = params["phone"] || user.phone
+    user.age = params["age"] || user.age
+    user.profile_pic = params["profile_pic"] || user.profile_pic
+    user.injury_diagnosis = params["injury_diagnosis"] || user.injury_diagnosis
+
+    if user.save
+      render json: user
+    else
+      render json: {error_messages: user.errors.full_messages},
+      status: 422
+    end
+  end
+
+  def destroy
+    user_id = params["id"]
+    user = User.find_by(id: user_id)
+    user.destroy
+    render json: {message: "user destroyed"}
+  end
 end
 
 
