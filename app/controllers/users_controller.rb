@@ -27,11 +27,10 @@ class UsersController < ApplicationController
     end
   end
   def update
+    pp params
     user_id = params["id"]
     user = User.find(user_id)
     user.name = params["name"] || user.name
-    user.email = params["email"] || user.email
-    user.password = params["password"] || user.password
     user.phone = params["phone"] || user.phone
     user.age = params["age"] || user.age
     user.profile_pic = params["profile_pic"] || user.profile_pic

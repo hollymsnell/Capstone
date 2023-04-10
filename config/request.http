@@ -1,5 +1,5 @@
 
-@jwt = "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2ODAwMjYwNTh9.O4UTOhjAhfT-0r4tuNJ_hnQzPs8AV2dRLJPyQrGwrSA"
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2ODA4MDAxMjZ9.2WaOo684EU4kiGaXPzhLGkK46TUH7ruvedmvxFb8qz0
 ###exercise Index
 GET http://localhost:3000/exercises/
 
@@ -46,13 +46,13 @@ Content-Type: application/json
 GET http://localhost:3000/users/8
 
 ### Users Update
-PATCH http://localhost:3000/users/
+PATCH http://localhost:3000/users/4
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
   "user_id": 4,
-  "name": "Annie Warbucks",
+  "name": "Annie Young",
   "email": "test@example.com",
   "password": "password",
   "password_confirmation": "password",
